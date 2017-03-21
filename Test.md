@@ -6,22 +6,21 @@ An accurate and efficient tool for structural variation calling and genotyping<b
 Wubin Ding<br>
 Wenqiang Liu<br>
 
-========
 Introduction<br>
 =======
 
 Whole genome sequencing (WGS) of parent-offspring trio samples has enabledthe identification of inherited DNA changes. Family-based sequencing studiesfor rare or complex inheritable diseases can facilitate the understanding ofpathogenic mechanism. However, most of the existing structural variation (SV)detection tools are designed to call somatic SVs, and rarely considergenotyping SVs, which hinders the identification of germline or de novopathogenic SVs. Here we present a novel tool, BioSV, to call and genotype SVsfrom WGS data. BioSV integrates read depth, split-reads and discordant readpairs to identify potential breakpoints, and build a binomial mixture model tocomprehensively genotype SVs. For both simulated and real WGS datasets,BioSV outperforms currently popular tools in SV calling and Delly in SVgenotyping. Moreover, BioSV successfully identifies two candidate pathogenicdeletions in the proband from WGS datasets of a family with autism spectrumdisorder. BioSV is freely available at http://www.megabionet.org/BioSV.<br>
 
-============
 User manual of BioSV<br>
 ===========
-----
+
 1 Overview<br>
 ---
 
 Breakpoint-based identification of Structural Variants (BioSV), is an accurate and efficient SV caller, which not only uses split-reads and discordant read pairs for SV prediction, but also integrates discordant and concordant read pairs (fragments) to genotype SVs under a statistical framework. Specifically, BioSV also provides a family-based SV caller for the analyses of parent-child trio based WGS studies. Moreover, BioSV exhibits high performance on both simulated and real WGS data in SV calling and genotyping.<br>
-----
+
 2 Requirements and installation<br>
+-----
 
 •	(1) Make sure awk, R programming tool and python2 or higher versions are available<br>
 •	(2) Download BioSV.tar.gz and decompress the packagetar zxvf BioSV.tar.gz<br>
