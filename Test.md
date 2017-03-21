@@ -9,13 +9,15 @@ Introduction<br>
 
 Whole genome sequencing (WGS) of parent-offspring trio samples has enabledthe identification of inherited DNA changes. Family-based sequencing studiesfor rare or complex inheritable diseases can facilitate the understanding ofpathogenic mechanism. However, most of the existing structural variation (SV)detection tools are designed to call somatic SVs, and rarely considergenotyping SVs, which hinders the identification of germline or de novopathogenic SVs. Here we present a novel tool, BioSV, to call and genotype SVsfrom WGS data. BioSV integrates read depth, split-reads and discordant readpairs to identify potential breakpoints, and build a binomial mixture model tocomprehensively genotype SVs. For both simulated and real WGS datasets,BioSV outperforms currently popular tools in SV calling and Delly in SVgenotyping. Moreover, BioSV successfully identifies two candidate pathogenicdeletions in the proband from WGS datasets of a family with autism spectrumdisorder. BioSV is freely available at http://www.megabionet.org/BioSV.<br>
 
-====
+============
 User manual of BioSV<br>
 ----
 1 Overview<br>
+
 Breakpoint-based identification of Structural Variants (BioSV), is an accurate and efficient SV caller, which not only uses split-reads and discordant read pairs for SV prediction, but also integrates discordant and concordant read pairs (fragments) to genotype SVs under a statistical framework. Specifically, BioSV also provides a family-based SV caller for the analyses of parent-child trio based WGS studies. Moreover, BioSV exhibits high performance on both simulated and real WGS data in SV calling and genotyping.<br>
 ----
 2 Requirements and installation<br>
+
 •	(1) Make sure awk, R programming tool and python2 or higher versions are available<br>
 •	(2) Download BioSV.tar.gz and decompress the packagetar zxvf BioSV.tar.gz<br>
 •	(3) Change to BioSV directory and install dependencies (bwa, bedtools, samtools, wgsim):cd BioSV sh Install.sh<br>
@@ -24,6 +26,7 @@ Breakpoint-based identification of Structural Variants (BioSV), is an accurate a
 3 Documentation<br>
 ----
 3.1 Structural variation calling<br>
+
 python BioSV.py –h<br>
 •	Usage: python BioSV.py <-b|-1(-2)> -o out_dir -g genome [options]<br>
 •	BioVS: Breakpoint-based Identification Of Structure Variation<br>
@@ -75,6 +78,7 @@ python ../BioSV.py -1 ./example_dir/example_N1.fq -2 ./example_dir/example_N2.fq
 •	(19) SeqII: Sequence of right part of SV event.<br>
 ------
 3.2 SV genotyping correction and high confidence SV filtering<br>
+
 Rscript GermlineSVs.R Bedpe-file Bam-file maxLen<br>
 Note: the bedpe file should be included in BioSV output directory.<br>
 R script ‘GermlineSVs.R’ aims to correct genotypes and filter false positives.<br>
@@ -86,6 +90,7 @@ maxLen Maximum length of deletions for genotyping correction (default=1e6-bp)<br
 •	(2) BioSV.hc.rawformat.bedpe: Raw BEDPE format of high confidence SVs.<br>
 ------
 3.3 Trio-based SV calling<br>
+
 Rscript Trio.SV.calling.R fa-hc.raw.bedpe mo-hc.raw.bedpe offspring-hc.raw.bedpe minRD maxRC output-directory<br>
 R script ‘Trio.SV.calling.R’ aims to call denovo SVs and homozygous deletions. Prior to trio SV calling, users should perform SV<br> genotyping correction for each sample of the family in Section 3.2.<br>
 fa-hc.raw.bedpe High confidence bedpe file for father<br>
@@ -101,6 +106,7 @@ output-directory Output directory<br>
 •	SVs transmitted from father or mother (FA/MO): heterozygous in both the offspring and one of the parents. The three types of SVs were potentially pathogenic in recessive diseases.<br>
 -----
 3.4 Structural variation simulation from diploid genomes<br>
+
 python BioSV_simulator.py –h<br>
 •	Usage: python BioSV_simulator.py -G -O <out_dir> [options]<br>
 •	BioSV_simulator: Simulate structural variation from diploid genomes and output paired-end fastq files<br>
@@ -159,6 +165,7 @@ Description of fields from example_T.bedpe :<br>
 -------
 4 IMPORTANT NOTICE<br>
 -------
+
 Users should NOT move the files in the output directory created by BioSV.py and scripts in “BioSV” and “BioSV/tools” to any other directories, otherwise, some errors may occur.<br>
 #Copyright Copyright (c) 2017, Wubin Ding, Li Zhang (East China Normal University).<br>
 If you would like to report any bugs when you running BioSV, don't hesitate to create an issue on github here, or email me:ding_wu_bin@163.com<br>
