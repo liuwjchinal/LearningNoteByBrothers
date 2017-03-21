@@ -29,8 +29,7 @@ Breakpoint-based identification of Structural Variants (BioSV), is an accurate a
 
 3 Documentation<br>
 ----
-3.1 Structural variation calling<br>
------
+# 3.1 Structural variation calling<br>
 
 python BioSV.py –h<br>
 •	Usage: python BioSV.py <-b|-1(-2)> -o out_dir -g genome [options]<br>
@@ -82,8 +81,7 @@ python ../BioSV.py -1 ./example_dir/example_N1.fq -2 ./example_dir/example_N2.fq
 •	(18) SeqI: Sequence of left part of SV event.<br>
 •	(19) SeqII: Sequence of right part of SV event.<br>
 
-3.2 SV genotyping correction and high confidence SV filtering<br>
----
+# 3.2 SV genotyping correction and high confidence SV filtering<br>
 
 Rscript GermlineSVs.R Bedpe-file Bam-file maxLen<br>
 Note: the bedpe file should be included in BioSV output directory.<br>
@@ -95,8 +93,7 @@ maxLen Maximum length of deletions for genotyping correction (default=1e6-bp)<br
 •	(1) BioSV.hc.bedpe: BEDPE format of high confidence SVs<br>
 •	(2) BioSV.hc.rawformat.bedpe: Raw BEDPE format of high confidence SVs.<br>
 
-3.3 Trio-based SV calling<br>
-------
+# 3.3 Trio-based SV calling<br>
 
 Rscript Trio.SV.calling.R fa-hc.raw.bedpe mo-hc.raw.bedpe offspring-hc.raw.bedpe minRD maxRC output-directory<br>
 R script ‘Trio.SV.calling.R’ aims to call denovo SVs and homozygous deletions. Prior to trio SV calling, users should perform SV<br> genotyping correction for each sample of the family in Section 3.2.<br>
@@ -112,8 +109,7 @@ output-directory Output directory<br>
 •	Homozygous SVs (Homozygous): heterozygous in the parents but homozygous in the offspring;<br>
 •	SVs transmitted from father or mother (FA/MO): heterozygous in both the offspring and one of the parents. The three types of SVs were potentially pathogenic in recessive diseases.<br>
 
-3.4 Structural variation simulation from diploid genomes<br>
------
+# 3.4 Structural variation simulation from diploid genomes<br>
 
 python BioSV_simulator.py –h<br>
 •	Usage: python BioSV_simulator.py -G -O <out_dir> [options]<br>
