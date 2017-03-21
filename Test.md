@@ -29,7 +29,7 @@ Breakpoint-based identification of Structural Variants (BioSV), is an accurate a
 
 3 Documentation<br>
 ----
-#### 3.1 Structural variation calling<br>
+### 3.1 Structural variation calling<br>
 
 python BioSV.py –h<br>
 •	Usage: python BioSV.py <-b|-1(-2)> -o out_dir -g genome [options]<br>
