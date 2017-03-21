@@ -14,8 +14,10 @@ Whole genome sequencing (WGS) of parent-offspring trio samples has enabledthe id
 
 ============
 User manual of BioSV<br>
+===========
 ----
 1 Overview<br>
+---
 
 Breakpoint-based identification of Structural Variants (BioSV), is an accurate and efficient SV caller, which not only uses split-reads and discordant read pairs for SV prediction, but also integrates discordant and concordant read pairs (fragments) to genotype SVs under a statistical framework. Specifically, BioSV also provides a family-based SV caller for the analyses of parent-child trio based WGS studies. Moreover, BioSV exhibits high performance on both simulated and real WGS data in SV calling and genotyping.<br>
 ----
