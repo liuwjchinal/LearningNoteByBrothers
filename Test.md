@@ -174,4 +174,4 @@ Users should NOT move the files in the output directory created by BioSV.py and 
 #Copyright Copyright (c) 2017, Wubin Ding, Li Zhang (East China Normal University).<br>
 If you would like to report any bugs when you running BioSV, don't hesitate to create an issue on github here, or email me:ding_wu_bin@163.com<br>
 
-![百度](http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg)
+诗歌之美：![诗歌之美](http://pic6.huitu.com/res/20130116/84481_20130116142820494200_1.jpg)
